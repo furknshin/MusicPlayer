@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.effect.MotionBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="Pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #2b2b2b;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sample.Controller">
+    <children>
+        <ListView fx:id="listView" layoutY="-1.0" prefHeight="500.0" prefWidth="250.0" />
+      <Pane layoutX="1.0" prefHeight="500.0" prefWidth="800.0">
+         <children>
+            <ImageView fx:id="imageView" fitHeight="500.0" fitWidth="800.0" opacity="0.4" pickOnBounds="true">
+               <image>
+                  <Image url="@../porsche.jpg" />
+               </image>
+               <effect>
+                  <GaussianBlur radius="2.35">
+                     <input>
+                        <MotionBlur />
+                     </input>
+                  </GaussianBlur>
+               </effect>
+            </ImageView>
+              <ComboBox fx:id="speedBox" layoutX="258.0" layoutY="392.0" onAction="#changeSpeed" prefHeight="26.0" prefWidth="122.0" promptText="Oynatma Hızı" style="-fx-background-color: #bdbdbd;" />
+              <Button fx:id="previousButton" layoutX="277.0" layoutY="275.0" mnemonicParsing="false" onAction="#previousMedia" prefHeight="64.0" prefWidth="62.0" style="-fx-background-radius: 100; -fx-background-color: #bdbdbd;" text="Geri" />
+              <Button fx:id="pauseButton" layoutX="463.0" layoutY="282.0" mnemonicParsing="false" onAction="#pauseMedia" prefHeight="64.0" prefWidth="62.0" style="-fx-background-radius: 10; -fx-background-color: #bdbdbd;" text="Durdur" />
+              <Button fx:id="resetButton" layoutX="495.0" layoutY="373.0" mnemonicParsing="false" onAction="#resetMedia" prefHeight="64.0" prefWidth="62.0" style="-fx-background-radius: 10; -fx-background-color: #bdbdbd;" text="Sıfırla" />
+              <Slider fx:id="volumeSlider" layoutX="614.0" layoutY="384.0" prefHeight="34.0" prefWidth="178.0" value="50.0" />
+              <Button fx:id="nextButton" layoutX="712.0" layoutY="282.0" mnemonicParsing="false" onAction="#nextMedia" prefHeight="64.0" prefWidth="62.0" style="-fx-background-radius: 100; -fx-background-color: #bdbdbd;" text="İleri" />
+              <Button fx:id="playButton" layoutX="525.0" layoutY="282.0" mnemonicParsing="false" onAction="#playMedia" prefHeight="64.0" prefWidth="62.0" style="-fx-background-radius: 10; -fx-background-color: #bdbdbd;" text="Başlat" />
+              <ProgressBar fx:id="songProgressBar" layoutX="250.0" layoutY="360.0" prefHeight="9.0" prefWidth="550.0" progress="0.0" style="-fx-background-color: black;" />
+              <Label fx:id="labelSong" alignment="CENTER" layoutX="251.0" prefHeight="114.0" prefWidth="550.0" text="Music Player">
+                  <font>
+                      <Font size="47.0" />
+                  </font>
+               <textFill>
+                  <LinearGradient endX="0.522727294401689" endY="0.22348483403523764" startX="0.5236742424242423" startY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+              </Label>
+            <Button fx:id="changeImageButton" layoutX="678.0" layoutY="461.0" mnemonicParsing="false" onAction="#changeWallpaper" style="-fx-background-color: #bdbdbd;" text="Arkaplanı Değiştir" />
+         </children>
+      </Pane>
+    </children>
+</AnchorPane>
